@@ -19,6 +19,7 @@ Here is a typical launch command and some comments:
   + the fetched tweets are the one satisfying the `--query` flag. Here the API will fetch the tweets tagging AmericanAir account, hence the tweets containing the phrase `@americanair` 
   + the fetched tweets are the ones between the dates `--start-date` and `--end-date` in the format `YYYY-mm-dd`. If `--end-date` is not specified, by default it is `today`'s date (which is an acceptable value for this flag).
   + if `--start-date` is not mentionned, the user can use the `--time-delta` in the command-line to specify the number of days preceding the `--end-date` it will fetch tweets. By default `--time-delta`is 7 days.
+  + `--count` is a MAX Limit of the number of fetched tweets. Note that this API does not fetch retweets from a given tweet.
 
 ## Topic Modeling
 
@@ -29,8 +30,13 @@ Here is a typical launch command and some comments:
 ├── run_api.py # main file for the Twitter API calling all necessary functions
 ├── twitter_api.py # main function for the Twitter API which fetches tweets and stores the output in a CSV File
 ├── args_api.py # parsing all command line arguments for Twitter API
+├── utils.py # various utility functions
 ```
 
 ## Output
 
 ## Requirements
+
+- Python 3.7
+- TextBlob
+- Tweepy 3.10.0
