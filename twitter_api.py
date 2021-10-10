@@ -67,7 +67,7 @@ class TwitterClient(object):
         except tweepy.TweepError as e:
             print("Error : " + str(e))
 
-    def writeToCSV(self, args):
+    def write_to_csv(self, args):
         with open(args.file, 'a', newline='') as csvfile:    
             csvWriter = csv.writer(csvfile)
             tweets = self.get_tweets(query = args.query, count=args.count, page = args.page, start=args.start, end=args.end)
@@ -101,7 +101,7 @@ def fetch_tweets(args):
 
     if args.real_time:
         while True:
-            api.writeToCSV(args)
+            api.write_to_csv(args)
             time.sleep(args.sleep_time)
     else:
-        api.writeToCSV(args)
+        api.write_to_csv(args)
