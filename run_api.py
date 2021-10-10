@@ -2,7 +2,7 @@ import os
 import sys
 import shutil
 
-from args import parse_args
+from args_api import parse_args
 from twitter_api import fetch_tweets
 
 def main():
